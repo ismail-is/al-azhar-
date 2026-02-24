@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 216 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 216 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 216 50% 10%;
+
+    --primary: 216 100% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 216 100% 25%;
+
+    --muted: 210 20% 95%;
+    --muted-foreground: 216 15% 50%;
+
+    --accent: 216 100% 25%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 216 100% 25%;
+
+    --radius: 0.5rem;
+
+    --navy: 216 60% 8%;
+    --navy-light: 216 45% 15%;
+    --royal-blue: 216 100% 25%;
+    --gold: 42 80% 55%;
+    --section-bg: 210 20% 97%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+  }
+}
+
+@layer components {
+  .section-label {
+    font-family: 'Oswald', sans-serif;
+    @apply text-sm font-semibold uppercase tracking-[0.2em] text-primary;
+  }
+
+  .section-title {
+    font-family: 'Oswald', sans-serif;
+    color: hsl(var(--navy));
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
+  }
+
+  .page-banner {
+    background-color: hsl(var(--navy));
+    @apply relative h-[300px] md:h-[350px] flex items-center overflow-hidden;
+  }
+
+  .page-banner::after {
+    content: '';
+    @apply absolute inset-0;
+    background: linear-gradient(135deg, hsla(216, 60%, 8%, 0.9), hsla(216, 60%, 8%, 0.6));
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .cta-banner {
+    background: linear-gradient(135deg, hsl(216, 100%, 25%), hsl(216, 60%, 8%));
+  }
+
+  .service-card {
+    @apply relative overflow-hidden rounded-lg cursor-pointer;
+  }
+
+  .service-card:hover::after {
+    content: '';
+    @apply absolute inset-0 transition-opacity duration-300;
+    background: linear-gradient(to top, hsla(216, 100%, 25%, 0.9), transparent);
+    opacity: 1;
+  }
+
+  .service-card::after {
+    content: '';
+    @apply absolute inset-0 transition-opacity duration-300;
+    background: linear-gradient(to top, hsla(216, 100%, 25%, 0.9), transparent);
+    opacity: 0;
+  }
+}
