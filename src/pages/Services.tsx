@@ -59,7 +59,7 @@ const Services = () => {
             className="rounded-lg overflow-hidden shadow-lg"
           >
             <img
-              src="/cctv-surveillance-control-room.jpg"
+              src="/images/allimgs/service/2.webp"
               alt="CCTV surveillance control room with multiple monitors displaying security camera feeds"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
