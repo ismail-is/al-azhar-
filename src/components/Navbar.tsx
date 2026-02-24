@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="container-custom flex items-center justify-between h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <img src="/images/logo.png" alt="AL-AZHAR AL-ARABIA" className="h-12 md:h-14" />
+          <img src="/images/allimgs/al-azhar.png" alt="AL-AZHAR AL-ARABIA" className="h-12 md:h-10 " />
         </Link>
 
         {/* Desktop Nav */}
