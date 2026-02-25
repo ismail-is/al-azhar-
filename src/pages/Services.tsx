@@ -12,7 +12,7 @@ const fadeUp = {
 };
 
 const GradientBullet = () => (
-  <span className="w-2 h-2 flex-shrink-0 rounded-full bg-gradient-to-br from-[#03377E] to-[#03377E] shadow-md" />
+  <span className="w-2 h-2 flex-shrink-0 rounded-full bg-[#03377E] shadow-md" />
 );
 
 const Services = () => {
@@ -22,6 +22,7 @@ const Services = () => {
 
       {/* ===== SURVEILLANCE & MONITORING ===== */}
       <section className="py-16 md:py-20 bg-white">
+
         {/* Section Heading */}
         <div className="container-custom text-center mb-16">
           <motion.div
@@ -49,33 +50,35 @@ const Services = () => {
           </motion.div>
         </div>
 
-        {/* Block 1: Image Left / Text Right — CCTV & Intrusion */}
-        <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch mb-20">
-          {/* Left Image */}
+        {/* ── Block 1: Desktop → Image Left / Text Right
+                       Mobile  → Image Top / Text Bottom ── */}
+        <div className="container-custom flex flex-col lg:flex-row gap-12 mb-20">
+
+          {/* Image — on mobile: order-1 (top), on desktop: left (natural order) */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
             custom={0}
-            className="rounded-lg overflow-hidden shadow-lg min-h-[400px]"
+            className="relative order-1 lg:order-1 lg:w-1/2 w-full rounded-lg overflow-hidden shadow-lg"
+            style={{ minHeight: "300px" }}
           >
             <img
               src="/images/allimgs/service/2.webp"
-              alt="CCTV surveillance control room with multiple monitors displaying security camera feeds"
-              className="w-full  object-cover hover:scale-105 transition-transform duration-500"
-              style={{ minHeight: "400px" }}
+              alt="CCTV surveillance control room with multiple monitors"
+              className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
           </motion.div>
 
-          {/* Right Text */}
+          {/* Text — on mobile: order-2 (bottom), on desktop: right (natural order) */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
             custom={1}
-            className="bg-[#f9f9f9] p-8 rounded-lg shadow"
+            className="order-2 lg:order-2 lg:w-1/2 w-full bg-[#f9f9f9] p-8 rounded-lg shadow"
           >
             <h3 className="text-lg font-bold text-[#0B3E81] mb-3 mt-3">
               CCTV &amp; Video Surveillance Systems
@@ -131,16 +134,35 @@ const Services = () => {
           </motion.div>
         </div>
 
-        {/* Block 2: Text Left / Image Right — AI Analytics & Monitoring */}
-        <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch mb-20">
-          {/* Left Text */}
+        {/* ── Block 2: Desktop → Text Left / Image Right
+                       Mobile  → Image Top / Text Bottom ── */}
+        <div className="container-custom flex flex-col lg:flex-row gap-12 mb-20">
+
+          {/* Image — on mobile: order-1 (top), on desktop: order-2 (right) */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            custom={0}
+            className="relative order-1 lg:order-2 lg:w-1/2 w-full rounded-lg overflow-hidden shadow-lg"
+            style={{ minHeight: "300px" }}
+          >
+            <img
+              src="/images/allimgs/service/2.webp"
+              alt="AI-powered video analytics monitoring dashboard"
+              className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </motion.div>
+
+          {/* Text — on mobile: order-2 (bottom), on desktop: order-1 (left) */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
             custom={1}
-            className="bg-[#f9f9f9] p-8 rounded-lg shadow"
+            className="order-2 lg:order-1 lg:w-1/2 w-full bg-[#f9f9f9] p-8 rounded-lg shadow"
           >
             <h3 className="text-lg font-bold text-[#0B3E81] mb-3 mt-3">
               AI-Powered Video Analytics
@@ -212,28 +234,12 @@ const Services = () => {
               </li>
             </ul>
           </motion.div>
-
-          {/* Right Image */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
-            className="rounded-lg overflow-hidden shadow-lg min-h-[400px]"
-          >
-            <img
-              src="/images/allimgs/service/2.webp"
-              alt="AI-powered video analytics monitoring dashboard"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              style={{ minHeight: "400px" }}
-            />
-          </motion.div>
         </div>
       </section>
 
       {/* ===== ACCESS CONTROL SYSTEM ===== */}
       <section className="py-16 md:py-20 bg-white">
+
         {/* Section Heading */}
         <div className="container-custom text-center mb-16">
           <motion.div
@@ -249,33 +255,35 @@ const Services = () => {
           </motion.div>
         </div>
 
-        {/* Block 3: Image Left / Text Right — Electronic ACS & VMS */}
-        <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch mb-20">
-          {/* Left Image */}
+        {/* ── Block 3: Desktop → Image Left / Text Right
+                       Mobile  → Image Top / Text Bottom ── */}
+        <div className="container-custom flex flex-col lg:flex-row gap-12 mb-20">
+
+          {/* Image — on mobile: order-1 (top), on desktop: order-1 (left) */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
             custom={0}
-            className="rounded-lg overflow-hidden shadow-lg min-h-[400px]"
+            className="relative order-1 lg:order-1 lg:w-1/2 w-full rounded-lg overflow-hidden shadow-lg"
+            style={{ minHeight: "300px" }}
           >
             <img
               src="/images/allimgs/service/2.webp"
               alt="Electronic access control system with biometric reader"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              style={{ minHeight: "400px" }}
+              className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
           </motion.div>
 
-          {/* Right Text */}
+          {/* Text — on mobile: order-2 (bottom), on desktop: order-2 (right) */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
             custom={1}
-            className="bg-[#f9f9f9] p-8 rounded-lg shadow"
+            className="order-2 lg:order-2 lg:w-1/2 w-full bg-[#f9f9f9] p-8 rounded-lg shadow"
           >
             <h3 className="text-lg font-bold text-[#0B3E81] mb-3 mt-3">
               Electronic Access Control Systems
@@ -331,16 +339,35 @@ const Services = () => {
           </motion.div>
         </div>
 
-        {/* Block 4: Text Left / Image Right — Mechanical Locks, Integration, Mobile Credentials */}
-        <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch mb-20">
-          {/* Left Text */}
+        {/* ── Block 4: Desktop → Text Left / Image Right
+                       Mobile  → Image Top / Text Bottom ── */}
+        <div className="container-custom flex flex-col lg:flex-row gap-12 mb-20">
+
+          {/* Image — on mobile: order-1 (top), on desktop: order-2 (right) */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            custom={0}
+            className="relative order-1 lg:order-2 lg:w-1/2 w-full rounded-lg overflow-hidden shadow-lg"
+            style={{ minHeight: "300px" }}
+          >
+            <img
+              src="/images/allimgs/service/2.webp"
+              alt="Key management and mobile credential security systems"
+              className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </motion.div>
+
+          {/* Text — on mobile: order-2 (bottom), on desktop: order-1 (left) */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
             custom={1}
-            className="bg-[#f9f9f9] p-8 rounded-lg shadow"
+            className="order-2 lg:order-1 lg:w-1/2 w-full bg-[#f9f9f9] p-8 rounded-lg shadow"
           >
             <h3 className="text-lg font-bold text-[#0B3E81] mb-3 mt-3">
               Mechanical Locks &amp; Key Management
@@ -412,24 +439,8 @@ const Services = () => {
               </li>
             </ul>
           </motion.div>
-
-          {/* Right Image */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
-            className="rounded-lg overflow-hidden shadow-lg min-h-[400px]"
-          >
-            <img
-              src="/images/allimgs/service/2.webp"
-              alt="Key management and mobile credential security systems"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              style={{ minHeight: "400px" }}
-            />
-          </motion.div>
         </div>
+
       </section>
     </Layout>
   );
